@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d5ps6whrijil"]
+[gd_scene load_steps=8 format=3 uid="uid://d5ps6whrijil"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2pegy"]
 [ext_resource type="Texture2D" uid="uid://cj2xl1o8uhxtl" path="res://assets/background/placeholder_background.jpg" id="2_otvud"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://1s1014phcoht" path="res://assets/sprites/Cid.png" id="4_5uulr"]
 [ext_resource type="Texture2D" uid="uid://2jrydu6h683b" path="res://assets/sprites/Wizard.png" id="5_cv63e"]
 [ext_resource type="Texture2D" uid="uid://c6tfwaxt6tsoc" path="res://assets/sprites/Enemy.png" id="6_by2ew"]
+[ext_resource type="Theme" uid="uid://dbu284pjtp4gm" path="res://battle_theme.tres" id="7_gcwn0"]
 
 [node name="Battle" type="Node"]
 script = ExtResource("1_2pegy")
@@ -108,16 +109,134 @@ texture = ExtResource("6_by2ew")
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(156, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="BattleUI/VBoxContainer/CommandPanelContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Menu"
+theme = ExtResource("7_gcwn0")
+text = "Attack"
 
-[node name="Label2" type="Label" parent="BattleUI/VBoxContainer/CommandPanelContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Menu"
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button3" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button4" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="MarginContainer2" type="MarginContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(156, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button2" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button3" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button4" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="MarginContainer3" type="MarginContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(156, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button2" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button3" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button4" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="MarginContainer4" type="MarginContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(156, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer4"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button2" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button3" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
+
+[node name="Button4" type="Button" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_gcwn0")
+text = "Attack"
 
 [node name="PlayerCharacters" type="Node2D" parent="."]
 
