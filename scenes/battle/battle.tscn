@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=3 uid="uid://d5ps6whrijil"]
+
+[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2pegy"]
+[ext_resource type="Texture2D" uid="uid://cj2xl1o8uhxtl" path="res://assets/background/placeholder_background.jpg" id="2_otvud"]
+[ext_resource type="Texture2D" uid="uid://d0gd1h3htueg8" path="res://assets/sprites/Knight.png" id="3_shsuo"]
+[ext_resource type="Texture2D" uid="uid://1s1014phcoht" path="res://assets/sprites/Cid.png" id="4_5uulr"]
+[ext_resource type="Texture2D" uid="uid://2jrydu6h683b" path="res://assets/sprites/Wizard.png" id="5_cv63e"]
+[ext_resource type="Texture2D" uid="uid://c6tfwaxt6tsoc" path="res://assets/sprites/Enemy.png" id="6_by2ew"]
+
+[node name="Battle" type="Node"]
+script = ExtResource("1_2pegy")
+metadata/_edit_vertical_guides_ = []
+
+[node name="BattleUI" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="BattleUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_otvud")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpritePanelContainer" type="PanelContainer" parent="BattleUI/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayerMarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer/PlayerMarginContainer"]
+layout_mode = 2
+
+[node name="CharacterMarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer/PlayerMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BattleUI/VBoxContainer/SpritePanelContainer/PlayerMarginContainer/VBoxContainer/CharacterMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_shsuo")
+
+[node name="CharacterMarginContainer2" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer/PlayerMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BattleUI/VBoxContainer/SpritePanelContainer/PlayerMarginContainer/VBoxContainer/CharacterMarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_5uulr")
+
+[node name="CharacterMarginContainer3" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer/PlayerMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect" type="TextureRect" parent="BattleUI/VBoxContainer/SpritePanelContainer/PlayerMarginContainer/VBoxContainer/CharacterMarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_cv63e")
+
+[node name="EnemyMarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer/EnemyMarginContainer"]
+layout_mode = 2
+
+[node name="EnemyMarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer/EnemyMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BattleUI/VBoxContainer/SpritePanelContainer/EnemyMarginContainer/VBoxContainer/EnemyMarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_by2ew")
+
+[node name="EnemyMarginContainer2" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer/EnemyMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BattleUI/VBoxContainer/SpritePanelContainer/EnemyMarginContainer/VBoxContainer/EnemyMarginContainer2"]
+layout_mode = 2
+texture = ExtResource("6_by2ew")
+
+[node name="CommandPanelContainer" type="PanelContainer" parent="BattleUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BattleUI/VBoxContainer/CommandPanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="Label2" type="Label" parent="BattleUI/VBoxContainer/CommandPanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="PlayerCharacters" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
