@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dp423vo2ua2pi"
+
+[deps]
+
+files=["res://data/Abilities.damage.translation", "res://data/Abilities.tags.translation"]
+
+source_file="res://data/Abilities.csv"
+dest_files=["res://data/Abilities.damage.translation", "res://data/Abilities.tags.translation"]
+
+[params]
+
+compress=true
+delimiter=0

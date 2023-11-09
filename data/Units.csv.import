@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://sawr5s78vtjq"
+
+[deps]
+
+files=["res://data/Units.type.translation", "res://data/Units.hp.translation", "res://data/Units.attack.translation", "res://data/Units.defense.translation", "res://data/Units.endurance.translation", "res://data/Units.magic.translation", "res://data/Units.resistance.translation", "res://data/Units.speed.translation", "res://data/Units.tags.translation"]
+
+source_file="res://data/Units.csv"
+dest_files=["res://data/Units.type.translation", "res://data/Units.hp.translation", "res://data/Units.attack.translation", "res://data/Units.defense.translation", "res://data/Units.endurance.translation", "res://data/Units.magic.translation", "res://data/Units.resistance.translation", "res://data/Units.speed.translation", "res://data/Units.tags.translation"]
+
+[params]
+
+compress=true
+delimiter=0
