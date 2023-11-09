@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://d5ps6whrijil"]
+[gd_scene load_steps=10 format=3 uid="uid://d5ps6whrijil"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2pegy"]
+[ext_resource type="PackedScene" uid="uid://ofjsp6ekgoc2" path="res://scenes/unit/unit.tscn" id="2_mcgt1"]
 [ext_resource type="Texture2D" uid="uid://cj2xl1o8uhxtl" path="res://assets/background/placeholder_background.jpg" id="2_otvud"]
 [ext_resource type="Texture2D" uid="uid://d0gd1h3htueg8" path="res://assets/sprites/Knight.png" id="3_shsuo"]
 [ext_resource type="Texture2D" uid="uid://1s1014phcoht" path="res://assets/sprites/Cid.png" id="4_5uulr"]
 [ext_resource type="Texture2D" uid="uid://2jrydu6h683b" path="res://assets/sprites/Wizard.png" id="5_cv63e"]
 [ext_resource type="Texture2D" uid="uid://c6tfwaxt6tsoc" path="res://assets/sprites/Enemy.png" id="6_by2ew"]
 [ext_resource type="Theme" uid="uid://dbu284pjtp4gm" path="res://battle_theme.tres" id="7_gcwn0"]
+[ext_resource type="PackedScene" uid="uid://blaymujd3qay0" path="res://scenes/squad/squad.tscn" id="8_i0r8j"]
 
 [node name="Battle" type="Node"]
 script = ExtResource("1_2pegy")
+unit_scene = ExtResource("2_mcgt1")
 metadata/_edit_vertical_guides_ = []
 
 [node name="BattleUI" type="CanvasLayer" parent="."]
@@ -36,6 +39,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="PlayerMarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
@@ -82,6 +86,7 @@ size_flags_vertical = 3
 texture = ExtResource("5_cv63e")
 
 [node name="EnemyMarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -238,6 +243,8 @@ layout_mode = 2
 theme = ExtResource("7_gcwn0")
 text = "Attack"
 
-[node name="PlayerCharacters" type="Node2D" parent="."]
+[node name="PlayerCharacters" parent="BattleUI" instance=ExtResource("8_i0r8j")]
+unique_name_in_owner = true
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Enemies" parent="BattleUI" instance=ExtResource("8_i0r8j")]
+unique_name_in_owner = true

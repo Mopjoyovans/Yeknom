@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://blaymujd3qay0"]
+
+[ext_resource type="Script" path="res://scenes/squad/squad.gd" id="1_ihdmh"]
+
+[node name="Squad" type="Node2D"]
+script = ExtResource("1_ihdmh")
