@@ -15,6 +15,9 @@ func add_unit(unit: Unit, coords):
 	add_child(unit)
 	
 	if active_unit == null:
+		active_unit = unit
+	
+	if active_unit == null:
 		set_active_unit(unit)
 
 

@@ -1,4 +1,5 @@
 ﻿name,damage,tags
 Attack,10,
-,,
-,,
+Heal,20,
+Fireball,30,
+Sneak Attack,40,

@@ -1,7 +1,7 @@
-﻿name,type,hp,attack,defense,endurance,magic,resistance,speed,tags
-Warrior,Follower,40,3,3,3,1,1,2,Follower
-Archer,Follower,20,3,1,2,1,1,4,Follower
-Priest,Follower,20,1,1,1,3,3,3,Follower
-Mage,Follower,20,1,1,1,3,3,3,Follower
-Wolf,Enemy,30,4,2,2,1,1,4,Enemy
-Enforcer,Enemy,40,3,3,3,1,2,2,Enemy
+﻿name,type,hp,attack,defense,endurance,magic,resistance,speed,abilities,tags
+Warrior,Follower,40,3,3,3,1,1,2,"Attack (https://www.notion.so/Attack-ad0e41f591bb468f906330aea9b514ae?pvs=21), Fireball (https://www.notion.so/Fireball-05dbf6f9e9ed4cf39eb1390e6264dfb3?pvs=21), Heal (https://www.notion.so/Heal-0a1dba18b5494526903e5a5acbce6d03?pvs=21), Sneak Attack (https://www.notion.so/Sneak-Attack-9b8a65b84ad6447eac0cc2821082f5b9?pvs=21)",Follower
+Archer,Follower,20,3,1,2,1,1,4,,Follower
+Priest,Follower,20,1,1,1,3,3,3,,Follower
+Mage,Follower,20,1,1,1,3,3,3,,Follower
+Wolf,Enemy,30,4,2,2,1,1,4,,Enemy
+Enforcer,Enemy,40,3,3,3,1,2,2,,Enemy

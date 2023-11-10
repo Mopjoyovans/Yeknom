@@ -1,6 +1,7 @@
 extends Node
 
 
+@export var ability_scene: PackedScene
 @export var unit_scene: PackedScene
 
 @onready var player_characters = %PlayerCharacters as Squad
@@ -11,6 +12,7 @@ extends Node
 func _ready():
 #	print(str('Abilities: ', GameData.abilities))
 #	print(str('Units: ', GameData.units['Wolf']))
+	GameEvents.ability_used.connect(on_ability_used)
 	populate_player_units(["Warrior", "Priest", "Mage"])
 	populate_enemy_creatures(["Enforcer", "Enforcer"])
 	populate_abilities()
@@ -50,22 +52,26 @@ func populate_enemy_creatures(unit_names: Array[String]) -> void:
 
 func populate_abilities():
 #	if player_characters.active_unit == null or player_characters.active_unit.abilities == null:
-	if player_characters.active_unit == null:
+	var unit: Unit = player_characters.active_unit
+	if unit == null:
 		return
 	var index: int = 0
 	
-	for ability in GameData.abilities:
-		print(ability)
-		var command_button = Button.new()
-		command_button.name = str(ability, 'Button')
-		command_button.text = ability
+	for ability_name in GameData.abilities:
+		var command_button = AbilityButton.new()
+		var ability = ability_scene.instantiate() as Ability
+		command_button.name = str(ability_name, 'Button')
+		command_button.text = ability_name
+		command_button.ability = ability.hydrate_ability_data(unit.abilities[index].name)
 		commands_container.add_child(command_button)
-#		var button_node = get_node(button)
-#		var ability = ability_scene.instantiate() as Ability
-#		if ability != null and creature.abilities.size() > index:
-#			button_node.ability = ability.hydrate_ability_data(creature.abilities[index].name)
-#			button_node.text = ability.ability_name
-#		else:
-#			button_node.text = ""
-#			button_node.ability = null
 		index += 1
+
+
+func process_ability(unit: Unit, ability: Ability):
+	unit.take_damage(ability.damage)
+
+
+func on_ability_used(ability: Ability):
+	if enemies.active_unit == null:
+		return
+	process_ability(enemies.active_unit, ability)

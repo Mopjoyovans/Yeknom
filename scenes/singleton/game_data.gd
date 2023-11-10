@@ -35,8 +35,6 @@ func load_csv_data(path: String):
 				data[csv_line["name"]] = csv_line
 		file.close()
 		
-#		print(data)
-
 	else:
 		print("Data file not found")
 		

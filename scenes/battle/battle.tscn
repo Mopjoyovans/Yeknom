@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://d5ps6whrijil"]
+[gd_scene load_steps=11 format=3 uid="uid://d5ps6whrijil"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2pegy"]
+[ext_resource type="PackedScene" uid="uid://61xwxwu68b5f" path="res://scenes/ability/ability.tscn" id="2_8ehbg"]
 [ext_resource type="PackedScene" uid="uid://ofjsp6ekgoc2" path="res://scenes/unit/unit.tscn" id="2_mcgt1"]
 [ext_resource type="Texture2D" uid="uid://cj2xl1o8uhxtl" path="res://assets/background/placeholder_background.jpg" id="2_otvud"]
 [ext_resource type="Texture2D" uid="uid://d0gd1h3htueg8" path="res://assets/sprites/Knight.png" id="3_shsuo"]
@@ -12,6 +13,7 @@
 
 [node name="Battle" type="Node"]
 script = ExtResource("1_2pegy")
+ability_scene = ExtResource("2_8ehbg")
 unit_scene = ExtResource("2_mcgt1")
 metadata/_edit_vertical_guides_ = []
 
@@ -165,6 +167,18 @@ layout_mode = 2
 [node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+layout_mode = 2
+
+[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+layout_mode = 2
+
+[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+layout_mode = 2
+
 [node name="CommandMarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -222,6 +236,18 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+layout_mode = 2
+
+[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+layout_mode = 2
+
+[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
 [node name="PlayerCharacters" parent="BattleUI" instance=ExtResource("8_i0r8j")]

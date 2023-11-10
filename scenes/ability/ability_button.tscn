@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp04g6dbi82n0"]
+
+[ext_resource type="Script" path="res://scenes/ability/ability_button.gd" id="1_0fda8"]
+
+[node name="AbilityButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Command"
+script = ExtResource("1_0fda8")

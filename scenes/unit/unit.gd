@@ -30,15 +30,31 @@ func hydrate_unit_data(unit_name_key: String) -> Unit:
 	stats_component.magic = int(unit_data.magic)
 	stats_component.resistance = int(unit_data.resistance)
 	stats_component.speed = int(unit_data.speed)
-#	abilities = populate_abilities(unit_data.abilities)
+	abilities = populate_abilities(unit_data.abilities)
 
 	health_component.max_health = float(unit_data.hp)
 	health_component.current_health = health_component.max_health
 	return self
 
 
+func populate_abilities(ability_data) -> Array:
+	var new_abilities: Array = []
+	var ability_names = ability_data.split(", ")
+	
+	for ability_name in ability_names:
+		var trimmed_ability_name = ability_name.substr(0, ability_name.find(" ("))
+		if trimmed_ability_name != "":
+			new_abilities.push_front(GameData.abilities[trimmed_ability_name])
+		
+	return new_abilities
+
+
 func take_damage(damage_amount: float):
 	health_component.damage(damage_amount)
+
+
+func is_alive():
+	return health_component.current_health > 0
 
 	
 func set_sprite():
