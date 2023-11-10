@@ -9,6 +9,7 @@ var ability: Ability
 
 func _ready():
 	self.pressed.connect(on_pressed)
+#	print("Created ability button ", ability.ability_name, " Damage: ", ability.damage)
 #	self.mouse_entered.connect(on_hover)
 #	self.mouse_exited.connect(on_blur)
 

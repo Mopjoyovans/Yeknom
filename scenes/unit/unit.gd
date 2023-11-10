@@ -50,6 +50,7 @@ func populate_abilities(ability_data) -> Array:
 
 
 func take_damage(damage_amount: float):
+	print(str("Deal Damage: ", damage_amount))
 	health_component.damage(damage_amount)
 
 

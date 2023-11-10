@@ -14,6 +14,7 @@ func hydrate_ability_data(ability_name_key: String) -> Ability:
 #	type = ability_data.type
 	damage = float(ability_data.damage)
 #	cost = float(ability_data.cost)
+#	print("Created ability ", ability_name, " Damage: ", damage)
 	return self
 
 

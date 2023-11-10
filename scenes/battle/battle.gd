@@ -51,19 +51,21 @@ func populate_enemy_creatures(unit_names: Array[String]) -> void:
 
 
 func populate_abilities():
-#	if player_characters.active_unit == null or player_characters.active_unit.abilities == null:
 	var unit: Unit = player_characters.active_unit
-	if unit == null:
+	if unit == null or unit.abilities == null:
 		return
 	var index: int = 0
 	
-	for ability_name in GameData.abilities:
+	for ability_data in unit.abilities:
 		var command_button = AbilityButton.new()
 		var ability = ability_scene.instantiate() as Ability
-		command_button.name = str(ability_name, 'Button')
-		command_button.text = ability_name
-		command_button.ability = ability.hydrate_ability_data(unit.abilities[index].name)
+
+		command_button.name = str(ability_data.name, 'Button')
+		command_button.text = ability_data.name
+		command_button.ability = ability.hydrate_ability_data(ability_data.name)
 		commands_container.add_child(command_button)
+#		print(unit.abilities[index].name)
+#		print("Created ability button ", ability_name, " Damage: ", command_button.ability.damage)
 		index += 1
 
 
