@@ -1,7 +1,21 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dbu284pjtp4gm"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dbu284pjtp4gm"]
 
 [ext_resource type="FontFile" uid="uid://bgy0onp4l0aaa" path="res://assets/fonts/m5x7.ttf" id="1_ajfbo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rswn"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjq2y"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7elv"]
+bg_color = Color(0, 0.709804, 0.458824, 1)
 
 [resource]
 Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_ajfbo")
+Label/font_sizes/font_size = 8
+Label/styles/normal = SubResource("StyleBoxFlat_6rswn")
+ProgressBar/font_sizes/font_size = 12
+ProgressBar/styles/background = SubResource("StyleBoxFlat_kjq2y")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_t7elv")

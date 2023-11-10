@@ -3,8 +3,9 @@ extends Node
 
 @export var unit_scene: PackedScene
 
-@onready var player_characters = %PlayerCharacters
-@onready var enemies = %Enemies
+@onready var player_characters = %PlayerCharacters as Squad
+@onready var enemies = %Enemies as Squad
+@onready var commands_container = %VBoxContainer
 
 
 func _ready():
@@ -48,12 +49,17 @@ func populate_enemy_creatures(unit_names: Array[String]) -> void:
 
 
 func populate_abilities():
-	pass
-#	if ability_buttons == null or creature == null or creature.abilities == null:
-#		return
-#	var index: int = 0
+#	if player_characters.active_unit == null or player_characters.active_unit.abilities == null:
+	if player_characters.active_unit == null:
+		return
+	var index: int = 0
 	
-#	for button in ability_buttons:
+	for ability in GameData.abilities:
+		print(ability)
+		var command_button = Button.new()
+		command_button.name = str(ability, 'Button')
+		command_button.text = ability
+		commands_container.add_child(command_button)
 #		var button_node = get_node(button)
 #		var ability = ability_scene.instantiate() as Ability
 #		if ability != null and creature.abilities.size() > index:
@@ -62,4 +68,4 @@ func populate_abilities():
 #		else:
 #			button_node.text = ""
 #			button_node.ability = null
-#		index += 1
+		index += 1
