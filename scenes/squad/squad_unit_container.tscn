@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsqqluwbyaikq"]
+[gd_scene load_steps=3 format=3 uid="uid://bsqqluwbyaikq"]
 
 [ext_resource type="Script" path="res://scenes/squad/squad_unit_container.gd" id="1_t0ktv"]
+[ext_resource type="PackedScene" uid="uid://cv3gji8gmgm8s" path="res://scenes/battle/unit_health.tscn" id="2_850to"]
 
 [node name="SquadUnitContainer" type="VBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_t0ktv")
+health_container = ExtResource("2_850to")
