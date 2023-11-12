@@ -6,7 +6,9 @@ extends Node
 
 @onready var player_characters = %PlayerCharacters as Squad
 @onready var enemies = %Enemies as Squad
-@onready var commands_container = %VBoxContainer
+@onready var commands_container = %CommandVBoxContainer
+@onready var player_unit_container = %PlayerVBoxContainer
+@onready var enemy_unit_container = %EnemyVBoxContainer
 
 
 func _ready():
@@ -17,6 +19,8 @@ func _ready():
 	populate_enemy_creatures(["Enforcer", "Enforcer"])
 	populate_abilities()
 #	populate_abilities(player_team.get_unit_by_name("Warrior"))
+	print(str("Player squad: ", player_characters.grid_component.squad_to_string()))
+	print(str("Enemy squad: ", enemies.grid_component.squad_to_string()))
 
 
 func populate_player_units(unit_names: Array[String]) -> void:
@@ -30,7 +34,8 @@ func populate_player_units(unit_names: Array[String]) -> void:
 #		unit.name_label = player_name_label
 #		unit.hp_label = player_hp_label
 #		player_characters.add_unit(unit)
-		var coords = [50, 50 + 50 * index]
+#		var coords = [50, 50 + 50 * index]
+		var coords = [0, index]
 		player_characters.add_unit(unit, coords)
 #		player_characters[index].text = unit_name_key
 #		player_characters[index].unit = unit
@@ -45,7 +50,8 @@ func populate_enemy_creatures(unit_names: Array[String]) -> void:
 		unit.init_child_refs()
 		unit.hydrate_unit_data(unit_name_key)
 		
-		var coords = [550, 70 + 70 * index]
+#		var coords = [550, 70 + 70 * index]
+		var coords = [0, index]
 		enemies.add_unit(unit, coords)
 		index += 1
 

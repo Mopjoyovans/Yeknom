@@ -5,6 +5,12 @@ class_name Squad
 var units: Array[Unit]
 var active_unit: Unit
 
+@onready var grid_component = %GridComponent as GridComponent
+
+
+#func _ready():
+#	grid_component = %GridComponent
+
 
 func add_unit(unit: Unit, coords):
 	unit.health_component.died.connect(on_unit_died)
@@ -13,6 +19,7 @@ func add_unit(unit: Unit, coords):
 	
 	units.push_front(unit)
 	add_child(unit)
+	grid_component.add_unit_at_position(unit, coords[0], coords[1])
 	
 	if active_unit == null:
 		active_unit = unit

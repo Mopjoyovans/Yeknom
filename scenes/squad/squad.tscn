@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://blaymujd3qay0"]
+[gd_scene load_steps=3 format=3 uid="uid://blaymujd3qay0"]
 
 [ext_resource type="Script" path="res://scenes/squad/squad.gd" id="1_ihdmh"]
+[ext_resource type="PackedScene" uid="uid://ds6mmuw6p4rhq" path="res://scenes/component/grid_component.tscn" id="2_l83at"]
 
 [node name="Squad" type="Node2D"]
 script = ExtResource("1_ihdmh")
+
+[node name="GridComponent" parent="." instance=ExtResource("2_l83at")]
+unique_name_in_owner = true

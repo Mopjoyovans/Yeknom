@@ -128,55 +128,56 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer"]
+[node name="PlayerVBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer"]
 layout_mode = 2
 
-[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer"]
 layout_mode = 2
 
-[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer"]
 layout_mode = 2
 
-[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer"]
 layout_mode = 2
 
-[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/PlayerUnitMarginContainer/PlayerVBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
 [node name="CommandMarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer"]
@@ -187,7 +188,7 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/CommandMarginContainer"]
+[node name="CommandVBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/CommandMarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -199,55 +200,56 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer"]
+[node name="EnemyVBoxContainer" type="VBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer"]
 layout_mode = 2
 
-[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer"]
 layout_mode = 2
 
-[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer2" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer"]
 layout_mode = 2
 
-[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer3" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer"]
 layout_mode = 2
 
-[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth2" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
-[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
+[node name="UnitHealth3" parent="BattleUI/VBoxContainer/CommandPanelContainer/HBoxContainer/EnemyUnitMarginContainer/EnemyVBoxContainer/HBoxContainer4" instance=ExtResource("8_gw5sa")]
 layout_mode = 2
 
 [node name="PlayerCharacters" parent="BattleUI" instance=ExtResource("8_i0r8j")]
