@@ -7,18 +7,19 @@ class_name SquadUnitContainer
 
 
 func _ready():
+	pass
 #	squad.add_unit_at_position.connect(on_unit_added)
-	init_unit_display()
+#	init_unit_display()
 
 
 func init_unit_display():
 #	squad.grid_component.add_unit_at_position.connect(on_unit_added)
 #	print(squad.grid_component)
-#	var grid_size = squad.grid_component.grid_size
-#	var cell_size = squad.grid_component.cell_size
+	var grid_size = squad.grid_component.grid_size
+	var cell_size = squad.grid_component.cell_size
 #	var squad_grid = squad.grid_component.grid
-	var grid_size = 4
-	var cell_size = 32
+#	var grid_size = 4
+#	var cell_size = 32
 	
 	for row in grid_size:
 		var unit_hbox = HBoxContainer.new()
@@ -26,7 +27,11 @@ func init_unit_display():
 		for col in grid_size:
 #			var unit_health_component = UnitHealth.new()
 #			unit_hbox.add_child(unit_health_component)
-			unit_hbox.add_child(health_container.instantiate())
+			var unit_health_container = health_container.instantiate()
+			unit_health_container.init_refs()
+			print(squad.grid_component.grid)
+			unit_health_container.set_unit(squad.grid_component.grid[row][col])
+			unit_hbox.add_child(unit_health_container)
 #			var ability = ability_scene.instantiate() as Ability
 #
 #			command_button.name = str(ability_data.name, 'Button')

@@ -17,7 +17,7 @@ func add_unit(unit: Unit, coords):
 	unit.position.x = coords[0]
 	unit.position.y = coords[1]
 	
-	units.push_front(unit)
+	units.append(unit)
 	add_child(unit)
 	grid_component.add_unit_at_position(unit, coords[0], coords[1])
 	
