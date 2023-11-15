@@ -29,7 +29,7 @@ func init_unit_display():
 #			unit_hbox.add_child(unit_health_component)
 			var unit_health_container = health_container.instantiate()
 			unit_health_container.init_refs()
-			print(squad.grid_component.grid)
+#			print(squad.grid_component.grid)
 			unit_health_container.set_unit(squad.grid_component.grid[row][col])
 			unit_hbox.add_child(unit_health_container)
 #			var ability = ability_scene.instantiate() as Ability

@@ -9,6 +9,8 @@ extends Node
 @onready var commands_container = %CommandVBoxContainer
 @onready var player_squad_unit_container = %PlayerSquadUnitContainer as SquadUnitContainer
 @onready var enemy_squad_unit_container = %EnemySquadUnitContainer as SquadUnitContainer
+@onready var player_sprite_unit_container = %PlayerSpriteUnitContainer as SpriteUnitContainer
+@onready var enemy_sprite_unit_container = %EnemySpriteUnitContainer as SpriteUnitContainer
 
 
 func _ready():
@@ -20,6 +22,8 @@ func _ready():
 	populate_abilities()
 	player_squad_unit_container.init_unit_display()
 	enemy_squad_unit_container.init_unit_display()
+	player_sprite_unit_container.init_sprite_grid()
+	enemy_sprite_unit_container.init_sprite_grid()
 #	populate_abilities(player_team.get_unit_by_name("Warrior"))
 	print(str("Player squad: ", player_characters.grid_component.squad_to_string()))
 	print(str("Enemy squad: ", enemies.grid_component.squad_to_string()))
