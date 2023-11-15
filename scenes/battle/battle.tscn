@@ -39,11 +39,11 @@ size_flags_vertical = 3
 
 [node name="PlayerMarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 160
 theme_override_constants/margin_top = 140
-theme_override_constants/margin_right = 160
+theme_override_constants/margin_right = 20
 
 [node name="PlayerSpriteUnitContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer/PlayerMarginContainer" node_paths=PackedStringArray("squad") instance=ExtResource("5_gmjmn")]
 unique_name_in_owner = true
@@ -52,11 +52,11 @@ squad = NodePath("../../../../PlayerCharacters")
 
 [node name="EnemyMarginContainer" type="MarginContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 4
-theme_override_constants/margin_left = 160
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 140
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 160
 
 [node name="EnemySpriteUnitContainer" parent="BattleUI/VBoxContainer/SpritePanelContainer/EnemyMarginContainer" node_paths=PackedStringArray("squad") instance=ExtResource("5_gmjmn")]
 unique_name_in_owner = true

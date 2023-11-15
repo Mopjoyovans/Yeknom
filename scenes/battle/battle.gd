@@ -22,6 +22,8 @@ func _ready():
 	populate_abilities()
 	player_squad_unit_container.init_unit_display()
 	enemy_squad_unit_container.init_unit_display()
+#	player_sprite_unit_container.init_sprite_grid()
+#	enemy_sprite_unit_container.init_sprite_grid()
 	player_sprite_unit_container.init_sprite_grid()
 	enemy_sprite_unit_container.init_sprite_grid()
 #	populate_abilities(player_team.get_unit_by_name("Warrior"))

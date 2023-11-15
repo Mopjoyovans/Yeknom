@@ -23,13 +23,20 @@ func init_sprite_grid():
 			unit_hbox.add_child(sprite)
 			
 			if squad.grid_component.get_unit_at_position(row, col) != null:
-#				call_deferred("print_pos", sprite)
-				print(sprite.position)
-				squad.grid_component.set_unit_grid_position(row, col, position.x, position.y)
+				call_deferred("set_sprite_pos", sprite, row, col)
+#				set_sprite_pos(sprite, row, col)
+#				print(sprite.global_position)
+#				squad.grid_component.set_unit_grid_position(row, col, position.x, position.y)
 #				squad.units[row][col].position.x = position.x
 #				squad.units[row][col].position.y = position.y
 
 		add_child(unit_hbox)
+
+
+func set_sprite_pos(sprite, row, col):
+	print(sprite)
+	print(sprite.global_position)
+	squad.grid_component.set_unit_grid_position(row, col, sprite.global_position)
 
 
 func on_unit_added(unit: Unit, x: int, y: int) -> void:
