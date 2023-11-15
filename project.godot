@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameEvents="*res://scenes/singleton/game_events.gd"
 GameData="*res://scenes/singleton/game_data.gd"
+Constants="*res://scenes/singleton/constants.gd"
 
 [display]
 

@@ -13,18 +13,10 @@ func _ready():
 
 
 func init_unit_display():
-#	squad.grid_component.add_unit_at_position.connect(on_unit_added)
-#	print(squad.grid_component)
-	var grid_size = squad.grid_component.grid_size
-	var cell_size = squad.grid_component.cell_size
-#	var squad_grid = squad.grid_component.grid
-#	var grid_size = 4
-#	var cell_size = 32
-	
-	for row in grid_size:
+	for row in Constants.GRID_SIZE:
 		var unit_hbox = HBoxContainer.new()
 		
-		for col in grid_size:
+		for col in Constants.GRID_SIZE:
 #			var unit_health_component = UnitHealth.new()
 #			unit_hbox.add_child(unit_health_component)
 			var unit_health_container = health_container.instantiate()

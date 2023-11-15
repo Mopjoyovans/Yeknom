@@ -3,21 +3,26 @@ class_name Squad
 
 
 var units: Array[Unit]
+#var units = []
 var active_unit: Unit
 
 @onready var grid_component = %GridComponent as GridComponent
 
 
 #func _ready():
-#	grid_component = %GridComponent
+#	for x in range(Constants.GRID_SIZE):
+#		units.append([])
+#		for y in range(Constants.GRID_SIZE):
+#			units[x].append(null)
 
 
 func add_unit(unit: Unit, coords):
 	unit.health_component.died.connect(on_unit_died)
-	unit.position.x = coords[0]
-	unit.position.y = coords[1]
+#	unit.position.x = coords[0]
+#	unit.position.y = coords[1]
 	
 	units.append(unit)
+#	units[coords[0]][coords[1]] = unit
 	add_child(unit)
 	grid_component.add_unit_at_position(unit, coords[0], coords[1])
 	

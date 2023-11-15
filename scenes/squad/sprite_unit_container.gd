@@ -2,22 +2,33 @@ extends VBoxContainer
 class_name SpriteUnitContainer
 
 
+var grid_outline_image: Image
+var image_texture: ImageTexture
+
 @export var squad: Squad
 
 
+func _ready():
+	grid_outline_image = Image.load_from_file("res://assets/sprites/grid-outline.png")
+	image_texture = ImageTexture.create_from_image(grid_outline_image)
+
+
 func init_sprite_grid():
-	var grid_size = squad.grid_component.grid_size
-	var cell_size = squad.grid_component.cell_size
-	
-	for row in grid_size:
+	for row in Constants.GRID_SIZE:
 		var unit_hbox = HBoxContainer.new()
 		
-		for col in grid_size:
+		for col in Constants.GRID_SIZE:
 			var sprite = TextureRect.new()
-			var image = Image.load_from_file("res://assets/sprites/grid-outline.png")
-			var texture = ImageTexture.create_from_image(image)
-			sprite.texture = texture
+			sprite.texture = image_texture
 			unit_hbox.add_child(sprite)
+			
+			if squad.grid_component.get_unit_at_position(row, col) != null:
+#				call_deferred("print_pos", sprite)
+				print(sprite.position)
+				squad.grid_component.set_unit_grid_position(row, col, position.x, position.y)
+#				squad.units[row][col].position.x = position.x
+#				squad.units[row][col].position.y = position.y
+
 		add_child(unit_hbox)
 
 
