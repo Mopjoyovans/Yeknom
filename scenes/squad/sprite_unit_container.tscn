@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf2w8e4am6m6k"]
+[gd_scene load_steps=3 format=3 uid="uid://bf2w8e4am6m6k"]
 
+[ext_resource type="Theme" uid="uid://dbu284pjtp4gm" path="res://battle_theme.tres" id="1_4750x"]
 [ext_resource type="Script" path="res://scenes/squad/sprite_unit_container.gd" id="1_w2rs8"]
 
 [node name="SpriteUnitContainer" type="VBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("1_4750x")
 script = ExtResource("1_w2rs8")

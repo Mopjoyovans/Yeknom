@@ -13,15 +13,15 @@ func _ready():
 
 
 func init_unit_display():
-	for row in Constants.GRID_SIZE:
+	for col in Constants.GRID_SIZE:
 		var unit_hbox = HBoxContainer.new()
 		
-		for col in Constants.GRID_SIZE:
+		for row in Constants.GRID_SIZE:
 #			var unit_health_component = UnitHealth.new()
 #			unit_hbox.add_child(unit_health_component)
 			var unit_health_container = health_container.instantiate()
 			unit_health_container.init_refs()
-#			print(squad.grid_component.grid)
+			print(squad.grid_component.grid[row][col])
 			unit_health_container.set_unit(squad.grid_component.grid[row][col])
 			unit_hbox.add_child(unit_health_container)
 #			var ability = ability_scene.instantiate() as Ability

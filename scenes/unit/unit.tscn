@@ -13,4 +13,5 @@ script = ExtResource("1_hvyib")
 [node name="StatsComponent" parent="." instance=ExtResource("3_kao7w")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
 texture = ExtResource("3_vrn4r")
