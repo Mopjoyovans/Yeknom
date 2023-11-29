@@ -2,7 +2,10 @@ extends Node2D
 class_name Unit
 
 
+@export var current_time: int = 0
+
 var abilities: Array
+var pause_timer: bool = false
 
 @onready var health_component = $HealthComponent as HealthComponent
 @onready var stats_component = $StatsComponent as StatsComponent
@@ -11,9 +14,17 @@ var abilities: Array
 
 func _ready():
 	health_component.health_changed.connect(on_health_changed)
+	GameEvents.start_unit_turn.connect(on_start_turn)
+	GameEvents.ability_used.connect(on_end_turn)
+#	self.start_unit_turn.connect(on_start_turn)
+#	self.end_unit_turn.connect(on_end_turn)
 	update_health_display()
 	set_sprite()
 	
+	
+func _process(delta):
+	increment_turn_timer()
+
 
 func init_child_refs():
 	health_component = $HealthComponent as HealthComponent
@@ -48,6 +59,18 @@ func populate_abilities(ability_data) -> Array:
 		
 	return new_abilities
 
+
+func increment_turn_timer():
+	if(pause_timer):
+		return
+	current_time = current_time + stats_component.speed
+#	print(current_time)
+	
+	if(current_time >= Constants.ACTIVE_TURN):
+		GameEvents.emit_start_unit_turn(self)
+		print(stats_component.unit_name, " ATB is ", current_time)
+		current_time = 0
+#	print(stats_component.unit_name, " ATB is ", current_time)
 
 func take_damage(damage_amount: float):
 	print(str("Deal Damage: ", damage_amount))
@@ -84,3 +107,14 @@ func update_health_display():
 
 func on_health_changed():
 	update_health_display()
+
+
+func on_start_turn(unit: Unit):
+	pause_timer = true
+	
+	if(unit.get_instance_id() == get_instance_id()):
+		print("Start turn for ", unit.stats_component.unit_name)
+
+
+func on_end_turn(ability: Ability):
+	pause_timer = false

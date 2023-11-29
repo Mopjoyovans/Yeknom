@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d5ps6whrijil"]
+[gd_scene load_steps=9 format=3 uid="uid://d5ps6whrijil"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2pegy"]
 [ext_resource type="PackedScene" uid="uid://61xwxwu68b5f" path="res://scenes/ability/ability.tscn" id="2_8ehbg"]
 [ext_resource type="PackedScene" uid="uid://ofjsp6ekgoc2" path="res://scenes/unit/unit.tscn" id="2_mcgt1"]
 [ext_resource type="Texture2D" uid="uid://cj2xl1o8uhxtl" path="res://assets/background/placeholder_background.jpg" id="2_otvud"]
+[ext_resource type="PackedScene" uid="uid://du1irq6ifvmrh" path="res://scenes/battle/turn_manager.tscn" id="4_84cbn"]
 [ext_resource type="PackedScene" uid="uid://bf2w8e4am6m6k" path="res://scenes/squad/sprite_unit_container.tscn" id="5_gmjmn"]
 [ext_resource type="PackedScene" uid="uid://blaymujd3qay0" path="res://scenes/squad/squad.tscn" id="8_i0r8j"]
 [ext_resource type="PackedScene" uid="uid://bsqqluwbyaikq" path="res://scenes/squad/squad_unit_container.tscn" id="9_vuocj"]
@@ -13,6 +14,10 @@ script = ExtResource("1_2pegy")
 ability_scene = ExtResource("2_8ehbg")
 unit_scene = ExtResource("2_mcgt1")
 metadata/_edit_vertical_guides_ = []
+
+[node name="TurnManager" parent="." node_paths=PackedStringArray("players", "enemies") instance=ExtResource("4_84cbn")]
+players = NodePath("../BattleUI/PlayerCharacters")
+enemies = NodePath("../BattleUI/Enemies")
 
 [node name="BattleUI" type="CanvasLayer" parent="."]
 

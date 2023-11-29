@@ -34,8 +34,6 @@ func init_sprite_grid():
 
 
 func set_sprite_pos(sprite, row, col):
-	print(sprite)
-	print(sprite.global_position)
 	squad.grid_component.set_unit_grid_position(row, col, sprite.global_position)
 
 

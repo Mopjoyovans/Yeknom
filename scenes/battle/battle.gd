@@ -14,11 +14,7 @@ extends Node
 
 
 func _ready():
-#	print(str('Abilities: ', GameData.abilities))
-#	print(str('Units: ', GameData.units['Wolf']))
 	GameEvents.ability_used.connect(on_ability_used)
-#	populate_player_units(["Warrior", "Priest", "Mage"])
-#	populate_enemy_creatures(["Enforcer", "Enforcer"])
 	populate_player_units(PlayerTeams.TEAM1)
 	populate_enemy_creatures(EnemyTeams.TEAM1)
 	populate_abilities()
@@ -28,9 +24,8 @@ func _ready():
 #	enemy_sprite_unit_container.init_sprite_grid()
 	player_sprite_unit_container.init_sprite_grid()
 	enemy_sprite_unit_container.init_sprite_grid()
-#	populate_abilities(player_team.get_unit_by_name("Warrior"))
-	print(str("Player squad: ", player_characters.grid_component.squad_to_string()))
-	print(str("Enemy squad: ", enemies.grid_component.squad_to_string()))
+#	print(str("Player squad: ", player_characters.grid_component.squad_to_string()))
+#	print(str("Enemy squad: ", enemies.grid_component.squad_to_string()))
 
 
 func populate_player_units(unit_names: Array[String]) -> void:
@@ -80,8 +75,6 @@ func populate_abilities():
 		command_button.text = ability_data.name
 		command_button.ability = ability.hydrate_ability_data(ability_data.name)
 		commands_container.add_child(command_button)
-#		print(unit.abilities[index].name)
-#		print("Created ability button ", ability_name, " Damage: ", command_button.ability.damage)
 		index += 1
 
 
