@@ -118,9 +118,8 @@ func on_start_turn(unit: Unit):
 			print("Start turn for ", unit.stats_component.unit_name, " ", unit.stats_component.type)
 			sprite.material.set_shader_parameter("toggled", 1.0)
 		else:
-			print("end turn")
-#			pause_timer = false
-#			on_end_turn(null)
+			# TODO: pick an ability for the AI to use, AI manager here
+			print("NOT LEADER")			
 #			GameEvents.emit_end_unit_turn(self)
 
 

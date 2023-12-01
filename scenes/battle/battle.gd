@@ -16,6 +16,7 @@ extends Node
 func _ready():
 	GameEvents.ability_used.connect(on_ability_used)
 	GameEvents.start_unit_turn.connect(on_start_turn)
+	GameEvents.end_unit_turn.connect(on_end_turn)
 	populate_player_units(PlayerTeams.TEAM1)
 	populate_enemy_creatures(EnemyTeams.TEAM1)
 	commands_container.visible = false
@@ -94,7 +95,6 @@ func on_ability_used(ability: Ability):
 	if enemies.active_unit == null:
 		return
 	process_ability(enemies.active_unit, ability)
-	print("ended unit turn from battle")
 	clean_abilities()
 
 
@@ -103,5 +103,4 @@ func on_start_turn(unit: Unit):
 
 
 func on_end_turn(ability: Ability):
-	print("ended unit turn from battle")
 	clean_abilities()
