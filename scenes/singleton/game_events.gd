@@ -5,6 +5,7 @@ signal ability_used(ability)
 signal start_unit_turn(unit: Unit)
 
 
+# also functions as turn end
 func emit_ability_used(ability):
 	ability_used.emit(ability)
 

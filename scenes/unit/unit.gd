@@ -16,8 +16,6 @@ func _ready():
 	health_component.health_changed.connect(on_health_changed)
 	GameEvents.start_unit_turn.connect(on_start_turn)
 	GameEvents.ability_used.connect(on_end_turn)
-#	self.start_unit_turn.connect(on_start_turn)
-#	self.end_unit_turn.connect(on_end_turn)
 	update_health_display()
 	set_sprite()
 	
@@ -30,11 +28,13 @@ func init_child_refs():
 	health_component = $HealthComponent as HealthComponent
 	stats_component = $StatsComponent as StatsComponent
 	sprite = $Sprite2D
+	sprite.material.set_shader_parameter("toggled", 0.0)
 
 
 func hydrate_unit_data(unit_name_key: String) -> Unit:
 	var unit_data = GameData.units[unit_name_key]
 	stats_component.unit_name = unit_data.name
+	stats_component.type = unit_data.type
 	stats_component.attack = int(unit_data.attack)
 	stats_component.defense = int(unit_data.defense)
 	stats_component.endurance = int(unit_data.endurance)
@@ -111,10 +111,19 @@ func on_health_changed():
 
 func on_start_turn(unit: Unit):
 	pause_timer = true
+#	print("setting shader toggled on")
 	
 	if(unit.get_instance_id() == get_instance_id()):
-		print("Start turn for ", unit.stats_component.unit_name)
+		if(stats_component.type == "Leader"):
+			print("Start turn for ", unit.stats_component.unit_name, " ", unit.stats_component.type)
+			sprite.material.set_shader_parameter("toggled", 1.0)
+		else:
+			print("end turn")
+#			pause_timer = false
+#			on_end_turn(null)
+#			GameEvents.emit_end_unit_turn(self)
 
 
 func on_end_turn(ability: Ability):
 	pause_timer = false
+	sprite.material.set_shader_parameter("toggled", 0.0)

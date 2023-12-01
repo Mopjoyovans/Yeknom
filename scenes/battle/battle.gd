@@ -15,9 +15,11 @@ extends Node
 
 func _ready():
 	GameEvents.ability_used.connect(on_ability_used)
+	GameEvents.start_unit_turn.connect(on_start_turn)
 	populate_player_units(PlayerTeams.TEAM1)
 	populate_enemy_creatures(EnemyTeams.TEAM1)
-	populate_abilities()
+	commands_container.visible = false
+#	populate_abilities()
 	player_squad_unit_container.init_unit_display()
 	enemy_squad_unit_container.init_unit_display()
 #	player_sprite_unit_container.init_sprite_grid()
@@ -61,8 +63,8 @@ func populate_enemy_creatures(unit_names: Array[String]) -> void:
 		index += 1
 
 
-func populate_abilities():
-	var unit: Unit = player_characters.active_unit
+func populate_abilities(unit: Unit):
+	commands_container.visible = true
 	if unit == null or unit.abilities == null:
 		return
 	var index: int = 0
@@ -78,6 +80,12 @@ func populate_abilities():
 		index += 1
 
 
+func clean_abilities():
+	commands_container.visible = false
+	for child in commands_container.get_children():
+		child.queue_free()
+
+
 func process_ability(unit: Unit, ability: Ability):
 	unit.take_damage(ability.damage)
 
@@ -86,3 +94,14 @@ func on_ability_used(ability: Ability):
 	if enemies.active_unit == null:
 		return
 	process_ability(enemies.active_unit, ability)
+	print("ended unit turn from battle")
+	clean_abilities()
+
+
+func on_start_turn(unit: Unit):
+	populate_abilities(unit)
+
+
+func on_end_turn(ability: Ability):
+	print("ended unit turn from battle")
+	clean_abilities()

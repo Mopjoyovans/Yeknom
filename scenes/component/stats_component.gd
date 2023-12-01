@@ -3,6 +3,7 @@ class_name StatsComponent
 
 
 var unit_name: String = "Creature Name"
+var type: String = "Follower"
 var attack: int = 50
 var defense: int = 50
 var endurance: int = 50
